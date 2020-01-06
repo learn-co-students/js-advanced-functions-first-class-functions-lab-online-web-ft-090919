@@ -28,4 +28,6 @@ const fareTripler = createFareMultiplier(3)
 
 const selectDifferentDrivers = function(driverSet,passedFunc){
   return passedFunc(driverSet)
+  console.log(passedFunc)
+  console.log(driverSet);
 }
