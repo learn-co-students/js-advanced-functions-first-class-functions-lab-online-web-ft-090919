@@ -8,6 +8,22 @@ const returnLastTwoDrivers = function(drivers) {
   return [drivers[length - 1], drivers[length - 2]].reverse();
 };
 
-const selectingDrivers = function() {
-  return [returnFirstTwoDrivers, returnLastTwoDrivers];
+const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
+
+function createFareMultiplier(integer) {
+  return function(fare) {
+    return fare * integer;
+  };
+}
+
+const fareDoubler = function(fare) {
+  return createFareMultiplier(2)(fare);
 };
+
+const fareTripler = function(fare) {
+  return createFareMultiplier(3)(fare);
+};
+
+function selectDifferentDrivers(arrayOfDdrivers, chosenFunction) {
+  return chosenFunction(arrayOfDdrivers);
+}
